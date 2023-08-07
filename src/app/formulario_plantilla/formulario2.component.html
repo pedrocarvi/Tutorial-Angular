@@ -1,0 +1,70 @@
+<hr />
+<div class="formulario2_container">
+  <h4>Formulario (plantilla)</h4>
+  <p>
+    Los formularios con un enfoque basados en plantilla son utiles para
+    formularios pequeños.
+  </p>
+  <div class="card">
+    <div class="card-body">
+      <!-- Se utiliza el ngSubmit para procesar el envio del formulario -->
+      <form (ngSubmit)="procesar_formulario()" #formularioPersona="ngForm">
+        <div class="mb-2">
+          <label for="" class="form-label"> Nombre </label>
+          <!-- El input debe tener un name y el ngModel hace referencia al valor del objeto creado en el TS -->
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese su nombre"
+            name="nombre"
+            [(ngModel)]="persona.nombre"
+            required
+            #nombre="ngModel"
+          />
+          <div
+            class="alert alert-danger mt-2"
+            [hidden]="nombre.valid || nombre.pristine"
+          >
+            El nombre es obligatorio
+          </div>
+        </div>
+        <!--  -->
+        <div class="mb-2">
+          <label for="" class="form-label"> Edad: </label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Ingrese su edad"
+            name="edad"
+            [(ngModel)]="persona.edad"
+            required
+            #edad="ngModel"
+          />
+          <div
+            class="alert alert-danger mt-2"
+            [hidden]="edad.valid || edad.pristine"
+          >
+            La edad es obligatoria
+          </div>
+        </div>
+        <!--  -->
+        <button class="btn btn-primary" [disabled]="!formularioPersona.valid">
+          Enviar - Opcion 1
+        </button>
+        <button
+          class="btn btn-primary"
+          [disabled]="!nombre.valid || edad.invalid"
+        >
+          Enviar - Opcion 2
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Permite ver los datos de la persona que se va poniendo en el Input, en forma de Json -->
+  <p style="margin-top: 20px"><b> Nombre: </b> {{ persona.nombre }}</p>
+  <p><b> Edad: </b> {{ persona.edad }}</p>
+  <p>{{ persona | json }}</p>
+
+  <hr />
+</div>

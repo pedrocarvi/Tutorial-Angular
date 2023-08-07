@@ -1,0 +1,42 @@
+<hr />
+<h4 style="margin: 10px">Inputs</h4>
+
+<!-- Ejemplo 1  -->
+<div class="mostrartexto_container">
+  <input
+    type="text"
+    placeholder="Ingrese un texto"
+    class="form-control"
+    #input_texto
+  />
+  <button class="btn btn-primary" (click)="texto = input_texto.value">
+    Mostrar texto
+  </button>
+</div>
+
+<p>{{ texto }}</p>
+
+<!-- Ejemplo 2  -->
+<input
+  type="text"
+  placeholder="Ingrese su nombre"
+  id="input_nombre"
+  class="form-control"
+  #input_name
+/>
+
+<button class="btn btn-primary" (click)="mostrar_en_consola(input_name.value)">
+  Mostrar en consola
+</button>
+
+<div
+  class="alert alert-success mt-2 alert-container"
+  *ngIf="openAlert; else mensaje"
+>
+  <p>Se ha enviado el mensaje correctamente</p>
+  <button class="btn btn-danger" (click)="openAlert = false">X</button>
+</div>
+
+<ng-template #mensaje>
+  <div class="alert alert-danger">Ingrese su nombre</div>
+</ng-template>

@@ -1,0 +1,66 @@
+<div class="formulario-reactivo">
+  <h4>Formulario reactivo</h4>
+  <p>Se utilizan para formularios de mayor complejidad</p>
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="formUser">
+        <div class="mb-2">
+          <label class="form-label"> Nombre </label>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Ingrese su nombre"
+            id=""
+            class="form-control"
+            formControlName="name"
+          />
+          <div
+            class="alert alert-danger mt-2"
+            [hidden]="name.valid || name.pristine"
+          >
+            El nombre es obligatorio
+          </div>
+        </div>
+        <!--  -->
+        <div class="mb-2">
+          <label class="form-label"> Email </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Ingrese su mail"
+            id=""
+            class="form-control"
+            formControlName="email"
+          />
+          <div
+            class="alert alert-danger mt-2"
+            [hidden]="email.valid || email.pristine"
+          >
+            <span *ngIf="email?.errors?.['required']">
+              El email es obligatorio
+            </span>
+            <span *ngIf="email?.errors?.['email']">
+              El email debe ser valido
+            </span>
+          </div>
+        </div>
+        <!-- Forma 1 de deshabilitar el boton si no estan los datos. Ver bien como funciona en el formulario plantilla (cambian algunas cosas en los inputs y el form) -->
+
+        <!-- <button
+          class="btn btn-primary"
+          [disabled]="name.invalid || email.invalid"
+        >
+          Enviar
+        </button> -->
+
+        <!-- Forma 2 desde la etiqueta form y el TS -->
+        <button class="btn btn-primary" [disabled]="formUser.invalid">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- {{ email.errors | json }} -->
+{{ formUser.get("name")?.value }}

@@ -1,0 +1,9 @@
+.btns-container {
+  margin: 10px;
+  display: flex;
+  gap: 22px;
+}
+
+img {
+  margin: 10px;
+}

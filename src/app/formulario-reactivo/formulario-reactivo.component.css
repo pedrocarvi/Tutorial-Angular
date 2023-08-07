@@ -1,0 +1,25 @@
+.formulario-reactivo {
+  margin-left: 10px;
+}
+
+.card {
+  width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+button {
+  width: 140px;
+}
+
+.alert {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 0;
+}

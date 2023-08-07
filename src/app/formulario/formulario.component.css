@@ -1,0 +1,23 @@
+* {
+  margin: 10px;
+}
+
+.mostrartexto_container {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+input {
+  margin: 10px;
+  width: 320px;
+  height: 50px;
+}
+input::placeholder {
+  padding: 10px;
+}
+
+.alert-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}

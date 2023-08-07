@@ -1,0 +1,26 @@
+.switch-container {
+  margin: 10px;
+}
+
+.input_button {
+  display: flex;
+  gap: 20px;
+}
+input {
+  width: 500px;
+  height: 50px;
+}
+
+input::placeholder {
+  padding-left: 10px;
+}
+
+.dia_ingresado {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.dia_sem {
+  font-weight: 500;
+}

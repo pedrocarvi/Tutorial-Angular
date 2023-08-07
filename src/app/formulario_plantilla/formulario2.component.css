@@ -1,0 +1,25 @@
+.formulario2_container {
+  margin-left: 10px;
+}
+
+.card {
+  width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+button {
+  width: 200px;
+}
+
+.alert {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 0;
+}

@@ -1,0 +1,24 @@
+<hr />
+<div class="children-container">
+  <h4>Comunicacion Componentes - Padre a Hijo</h4>
+  <!-- <p>{{ valorAPasar }}</p> -->
+
+  <!-- Input que no modifica al padre -->
+  <!-- <p>Input Hijo (no cambia al padre)</p>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="valorAPasar"
+    style="width: 300px; margin: 20px 0"
+  /> -->
+
+  <!-- Input que si modifica al padre -->
+  <p>Input Hijo (cambia al padre)</p>
+  <input
+    type="text"
+    class="form-control"
+    (keyup)="emitTitleChange()"
+    [(ngModel)]="valorAPasar"
+    style="width: 300px; margin: 20px 0"
+  />
+</div>
